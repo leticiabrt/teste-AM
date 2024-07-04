@@ -1,5 +1,5 @@
 import { BottomTabNavigationProp, createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import { Slide1, Slide2 } from '../screens';
+import { Slide1 } from '../../screens';
 import { Entypo, Feather } from '@expo/vector-icons';
 
 type MenuTabParam = {
@@ -22,7 +22,7 @@ export function MenuTabs() {
                     )
                 }}
             />
-            <Tab.Screen name="Slide2" component={Slide2}
+            <Tab.Screen name="Slide2" component={Slide1}
                 options={{
                     tabBarIcon: () => (
                         <Feather name="sliders" size={24} colors="black"/>

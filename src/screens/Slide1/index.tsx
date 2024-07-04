@@ -1,6 +1,6 @@
 import { View, Text, Image } from "react-native";
 import { styles } from "./styles"
-import CustomButton from '../../components/CustomBuston';
+import CustomButton from '../../components/CustomButton';
 
 
 export function Slide1() {
