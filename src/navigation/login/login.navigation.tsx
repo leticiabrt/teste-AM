@@ -1,5 +1,5 @@
 import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
-import { Login, Register, Slide1 } from '../../screens'
+import { Login, Register, Home } from '../../screens'
 
 type LoginStackParamList = {
     Login: undefined
@@ -18,7 +18,7 @@ export function LoginNavigation() {
         <Stack.Navigator id='login' screenOptions={{ headerShown: false }}>
             <Stack.Screen name='Login' component={Login} />
             <Stack.Screen name='Register' component={Register} />
-            <Stack.Screen name='Slide1' component={Slide1} />
+            <Stack.Screen name='Slide1' component={Home} />
         </Stack.Navigator>
     )
     }

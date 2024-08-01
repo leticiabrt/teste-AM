@@ -1,4 +1,3 @@
-import { AnimatableStringValue } from "react-native";
 import { api } from "../../api";
 
 export interface IUser {
@@ -7,7 +6,7 @@ export interface IUser {
     password?: string
 }
 
-export interface IRespondeUser {
+export interface IResponseUser {
     name: string
     email: string
     creeated_at: string
@@ -16,7 +15,7 @@ export interface IRespondeUser {
 }
 
 export interface IAuthenticated {
-    user: IResponseUSer
+    user: IResponseUser
     token: {
         token: string
         expires_at: string
@@ -27,7 +26,7 @@ class UserData {
     register(data: IUser) {
         return api.post<IResponseUser>('/register', data)
     }
-    register(data: IUser) {
+    login(data: IUser) {
         return api.post<IAuthenticated>('/login', data)
     }
 }

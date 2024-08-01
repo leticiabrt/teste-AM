@@ -1,12 +1,13 @@
 import { BottomTabNavigationProp, createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import { Slide1 } from '../../screens';
+import { Slide1, Mensagem, Perfil } from '../../screens';
 import { Entypo, Feather } from '@expo/vector-icons';
 
 type MenuTabParam = {
     Slide1: undefined
-    Slide2: undefined
+    Mensagem: undefined
+    Perfil: undefined
 }
-type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Slide1">
+type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Perfil">
 export type MenuTabTypes = {
     navigation: MenuScreenNavigation
 }
@@ -22,7 +23,8 @@ export function MenuTabs() {
                     )
                 }}
             />
-            <Tab.Screen name="Slide2" component={Slide1}
+            
+            <Tab.Screen name="Mensagem" component={Mensagem}
                 options={{
                     tabBarIcon: () => (
                         <Feather name="sliders" size={24} colors="black"/>

@@ -67,7 +67,7 @@ export function Login({ navigation }: LoginTypes) {
                         onChangeText={(i) => handleChange({ password: i })}
                     />
                 </View>
-                <ButtonInterface title='Login' type='primary' onPressI={handleHome} />
+                <ButtonInterface title='Login' type='primary' onPressI={handleSignIn} />
                 <ButtonInterface title='Cadastre-se' type='secondary' onPressI={handleRegister} />
             </KeyboardAvoidingView >
         </View >
