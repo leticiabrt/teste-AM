@@ -19,7 +19,7 @@ export function Register({ navigation }: LoginTypes) {
     const { setLoading } = useAuth()
     async function handleRegister() {
         if (data?.email && data.name && data.password) {
-            setLoading(true)
+            //setLoading(true)
             try {
                 const response = await apiUser.register(data)
                 Alert.alert(`${response.data.name} cadastrado!!!`)
@@ -28,6 +28,7 @@ export function Register({ navigation }: LoginTypes) {
                 const err = error as AxiosError
                 const msg = err.response?.data as string
                 Alert.alert(msg)
+                console.log(msg)
             }
             setLoading(false)
         } else {

@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import { apiMessage } from "../../services/data";
 import { IResponseMessage } from "../../services/data/Message";
 import { useAuth } from "../../hook/auth";
+import AntDesign from '@expo/vector-icons/AntDesign'
+import { colors} from "../../styles/globalstyles"
+import { MessageTypes } from "../../navigation/message.navigation"
 
-export function Mensagem() {
+export function Mensagem({navigation}: MessageTypes) {
     const [message, setMessage] = useState<IResponseMessage[]>([])
     const { setLoading } = useAuth()
     useEffect ( () => {
@@ -15,7 +18,7 @@ export function Mensagem() {
             setMessage(response.data)
         }
         setLoading(false)
-        loadMessage()
+        navigation.addListener("focus", () => loadMessage())
     }, [])
 
     interface itemMessage {
@@ -24,6 +27,7 @@ export function Mensagem() {
     const renderItem = (({ item }: itemMessage) => {
         return (
             <View style={styles.item}>
+                <Text style={styles.itemText}>Nome: {item.user.email}</Text>
                 <Text style={styles.itemText}>Título: {item.title}</Text>
                 <Text style={styles.itemText}>Mensagem: {item.message}</Text>
             </View>
@@ -40,6 +44,10 @@ export function Mensagem() {
                     />
                 )
             }
+            <TouchableOpacity style={styles.botao}>
+                onPress={() => navigation.navigate("CadMessage")}
+                <AntDesign name="pluscircle" size={48} colors={colors.secondary} />
+            </TouchableOpacity>
         </View>
     )
 }
